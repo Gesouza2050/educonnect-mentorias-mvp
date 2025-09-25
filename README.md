@@ -2,13 +2,13 @@
 
 EduConnect é uma plataforma web que conecta mentores e estudantes, inspirada no Superprof. Desenvolvida com HTML, CSS e JavaScript puro, sem frameworks.
 
-## 🎯 Objetivo
+ Objetivo
 
 Missão 1 – HTML/CSS/JS: Criar uma plataforma funcional e responsiva para conectar mentores especialistas com estudantes que buscam aprender e desenvolver novas habilidades.
 
-## ✨ Funcionalidades
+ Funcionalidades
 
-### 🔍 Busca e Filtros
+Busca e Filtros
 - Campo de busca por nome, área ou especialidade
 - Filtros por área de conhecimento
 - Filtros por faixa de preço (mínimo e máximo)
@@ -16,7 +16,7 @@ Missão 1 – HTML/CSS/JS: Criar uma plataforma funcional e responsiva para cone
 - Ordenação por avaliação, preço ou nome
 - Resultados em tempo real sem recarregamento
 
-### 👨‍🏫 Lista de Mentores
+ Lista de Mentores
 - Cards responsivos com informações dos mentores
 - Fotos, nomes, áreas de especialização
 - Preço por hora e avaliações com estrelas
@@ -24,7 +24,7 @@ Missão 1 – HTML/CSS/JS: Criar uma plataforma funcional e responsiva para cone
 - Sistema de favoritos com persistência local
 - Modal detalhado com biografia e disponibilidade
 
-### 📅 Sistema de Agendamento
+Sistema de Agendamento
 - Formulário completo de agendamento
 - Seleção de mentor (populada dinamicamente)
 - Seleção de data e hora
@@ -32,18 +32,18 @@ Missão 1 – HTML/CSS/JS: Criar uma plataforma funcional e responsiva para cone
 - Validação de campos obrigatórios
 - Persistência em localStorage
 
-### 👥 Grupos de Estudo
+ Grupos de Estudo
 - Lista de grupos por área de conhecimento
 - Materiais de estudo com links externos
 - Sistema de tags para filtragem
 - Busca por nome ou descrição
 
-### ❤️ Sistema de Favoritos
+ Sistema de Favoritos
 - Adicionar/remover mentores dos favoritos
 - Seção dedicada "Meus Favoritos"
 - Persistência no navegador
 
-## 🏗️ Estrutura do Projeto
+ Estrutura do Projeto
 
 ```
 educonnect/
@@ -56,7 +56,7 @@ educonnect/
 └── README.md           # Documentação
 ```
 
-## 🚀 Como Rodar Localmente
+omo Rodar Localmente
 
 ### Opção 1: Abrir Diretamente
 1. Clone ou baixe o projeto
@@ -79,14 +79,14 @@ php -S localhost:5000
 
 Acesse: `http://localhost:5000`
 
-## 📱 Responsividade
+ Responsividade
 
 A aplicação é totalmente responsiva:
 - **Desktop**: Grid de 3 colunas para mentores
 - **Tablet**: Grid de 2 colunas  
 - **Mobile**: Grid de 1 coluna com menu hambúrguer
 
-## ♿ Acessibilidade
+Acessibilidade
 
 Implementações para acessibilidade:
 - Landmarks semânticos (`nav`, `main`, `section`)
@@ -129,27 +129,17 @@ Cada mentor segue esta estrutura:
 3. Para adicionar um mentor, copie um existente e modifique os campos
 4. Para remover, delete o objeto completo
 5. Certifique-se de manter a sintaxe JSON válida
+ Como Publicar no GitHub Pages
 
-## 🌐 Como Publicar no GitHub Pages
 
-1. **Crie um repositório no GitHub**
-2. **Faça upload dos arquivos**
-3. **Configure o GitHub Pages**:
-   - Vá em Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: / (root)
-4. **Aguarde alguns minutos**
-5. **Acesse**: `https://seu-usuario.github.io/nome-do-repositorio`
-
-## 💾 Estados da UI
+ Estados da UI
 
 - **Loading**: Skeleton animado durante carregamento
 - **Empty State**: Mensagem quando não há resultados
 - **Error State**: Tratamento amigável de erros
 - **Paginação**: Botão "Carregar mais" para performance
 
-## 🎨 Design System
+ Design System
 
 ### Cores Principais
 - **Primária**: `#2563eb` (azul)
@@ -163,7 +153,7 @@ Cada mentor segue esta estrutura:
 - Modal acessível com backdrop blur
 - Grid responsivo com breakpoints
 
-## 📋 Regras de Desenvolvimento
+ Regras de Desenvolvimento
 
 - ✅ **Sem frameworks** (Bootstrap, Tailwind, React, etc.)
 - ✅ **Código comentado** e bem organizado
@@ -172,7 +162,7 @@ Cada mentor segue esta estrutura:
 - ✅ **Acessibilidade** (WCAG 2.1)
 - ✅ **Performance** otimizada
 
-## 🔄 Funcionalidades Implementadas
+ Funcionalidades Implementadas
 
 - [x] Navbar fixa com menu responsivo
 - [x] Sistema de busca e filtros
@@ -185,8 +175,7 @@ Cada mentor segue esta estrutura:
 - [x] Estados de loading/empty/error
 - [x] Acessibilidade completa
 - [x] Responsividade total
-
-## 📊 Performance
+ Performance
 
 - **Carregamento otimizado** com lazy loading de imagens
 - **Debounce** nos campos de busca (300ms)
@@ -194,14 +183,14 @@ Cada mentor segue esta estrutura:
 - **localStorage** para persistência local
 - **CSS otimizado** com variáveis
 
-## 🔍 SEO
+ SEO
 
 - Meta tags apropriadas
 - Estrutura HTML semântica
 - Alt text em imagens
 - Títulos hierárquicos corretos
 
-## 🧪 Testado Em
+Testado Em
 
 - ✅ Chrome 120+
 - ✅ Firefox 115+
@@ -210,7 +199,7 @@ Cada mentor segue esta estrutura:
 - ✅ Mobile Safari (iOS)
 - ✅ Chrome Mobile (Android)
 
-## 📝 Logs de Desenvolvimento
+ Logs de Desenvolvimento
 
 O projeto foi desenvolvido seguindo as melhores práticas:
 
