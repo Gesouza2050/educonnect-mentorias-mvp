@@ -1,0 +1,384 @@
+{
+  "mentors": [
+    {
+      "id": 1,
+      "name": "Ana Silva",
+      "area": "Programação",
+      "price": 85,
+      "rating": 4.9,
+      "photo": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      "bio": "Desenvolvedora Full Stack com mais de 8 anos de experiência. Especialista em React, Node.js e Python. Já mentorei mais de 200 estudantes e profissionais em transição de carreira.",
+      "tags": ["React", "Node.js", "Python", "JavaScript", "MongoDB"],
+      "city": "São Paulo, SP",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["09:00", "14:00", "16:00", "19:00"]},
+        {"day": "Terça", "slots": ["10:00", "15:00", "18:00", "20:00"]},
+        {"day": "Quarta", "slots": ["09:00", "13:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["11:00", "14:00", "16:00", "20:00"]},
+        {"day": "Sexta", "slots": ["09:00", "15:00", "17:00"]}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Carlos Roberto",
+      "area": "Data Science",
+      "price": 120,
+      "rating": 4.8,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "bio": "Data Scientist com PhD em Estatística. Especialista em Machine Learning, Deep Learning e análise de dados. Trabalha com empresas Fortune 500 e startups unicórnio.",
+      "tags": ["Python", "Machine Learning", "TensorFlow", "Pandas", "SQL"],
+      "city": "Rio de Janeiro, RJ",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["10:00", "14:00", "18:00", "20:00"]},
+        {"day": "Terça", "slots": ["09:00", "16:00", "19:00"]},
+        {"day": "Quarta", "slots": ["11:00", "15:00", "17:00", "20:00"]},
+        {"day": "Quinta", "slots": ["10:00", "13:00", "18:00"]},
+        {"day": "Sexta", "slots": ["09:00", "14:00", "16:00", "19:00"]}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Mariana Costa",
+      "area": "UX/UI Design",
+      "price": 95,
+      "rating": 4.7,
+      "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      "bio": "UX/UI Designer com experiência internacional. Especializada em Design Thinking, prototipagem e pesquisa com usuários. Ex-Google e ex-Uber.",
+      "tags": ["Figma", "Adobe XD", "Design Thinking", "Prototipagem", "Research"],
+      "city": "Belo Horizonte, MG",
+      "attendance": "presencial",
+      "availability": [
+        {"day": "Segunda", "slots": ["08:00", "13:00", "15:00", "17:00"]},
+        {"day": "Terça", "slots": ["09:00", "14:00", "16:00", "19:00"]},
+        {"day": "Quarta", "slots": ["10:00", "12:00", "18:00", "20:00"]},
+        {"day": "Quinta", "slots": ["08:00", "15:00", "17:00"]},
+        {"day": "Sexta", "slots": ["09:00", "11:00", "14:00", "16:00"]}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pedro Oliveira",
+      "area": "Marketing Digital",
+      "price": 75,
+      "rating": 4.6,
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      "bio": "Growth Hacker e especialista em Marketing Digital. Ajudou mais de 50 empresas a escalar seus negócios online. Especialista em SEO, Google Ads e redes sociais.",
+      "tags": ["SEO", "Google Ads", "Facebook Ads", "Analytics", "Growth"],
+      "city": "Porto Alegre, RS",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["09:00", "11:00", "15:00", "18:00"]},
+        {"day": "Terça", "slots": ["10:00", "14:00", "17:00", "20:00"]},
+        {"day": "Quarta", "slots": ["08:00", "13:00", "16:00", "19:00"]},
+        {"day": "Quinta", "slots": ["09:00", "12:00", "18:00", "21:00"]},
+        {"day": "Sexta", "slots": ["10:00", "15:00", "17:00"]}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Julia Santos",
+      "area": "Inglês",
+      "price": 60,
+      "rating": 4.9,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+      "bio": "Professora de inglês certificada pelo Cambridge. Morou 5 anos nos EUA e tem experiência com preparação para TOEFL, IELTS e inglês para negócios.",
+      "tags": ["TOEFL", "IELTS", "Business English", "Conversação", "Cambridge"],
+      "city": "Salvador, BA",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["07:00", "12:00", "14:00", "19:00"]},
+        {"day": "Terça", "slots": ["08:00", "13:00", "15:00", "20:00"]},
+        {"day": "Quarta", "slots": ["07:00", "11:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["09:00", "14:00", "16:00", "21:00"]},
+        {"day": "Sexta", "slots": ["08:00", "12:00", "18:00"]}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Roberto Lima",
+      "area": "Finanças",
+      "price": 110,
+      "rating": 4.8,
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
+      "bio": "CFO com mais de 15 anos de experiência em grandes corporações. Especialista em planejamento financeiro, investimentos e análise de mercado.",
+      "tags": ["Investimentos", "Planejamento", "Excel", "Power BI", "Valuation"],
+      "city": "São Paulo, SP",
+      "attendance": "presencial",
+      "availability": [
+        {"day": "Segunda", "slots": ["10:00", "16:00", "18:00"]},
+        {"day": "Terça", "slots": ["09:00", "14:00", "17:00", "20:00"]},
+        {"day": "Quarta", "slots": ["11:00", "15:00", "19:00"]},
+        {"day": "Quinta", "slots": ["10:00", "13:00", "16:00", "18:00"]},
+        {"day": "Sexta", "slots": ["09:00", "14:00", "17:00"]}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Fernanda Alves",
+      "area": "Psicologia",
+      "price": 90,
+      "rating": 5.0,
+      "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face",
+      "bio": "Psicóloga clínica especializada em desenvolvimento pessoal e coaching. Mestre em Psicologia Positiva, ajuda pessoas a alcançarem seus objetivos pessoais e profissionais.",
+      "tags": ["Coaching", "Desenvolvimento", "Mindfulness", "PNL", "Terapia"],
+      "city": "Brasília, DF",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["08:00", "14:00", "16:00", "20:00"]},
+        {"day": "Terça", "slots": ["09:00", "13:00", "18:00", "21:00"]},
+        {"day": "Quarta", "slots": ["10:00", "15:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["08:00", "12:00", "16:00", "20:00"]},
+        {"day": "Sexta", "slots": ["09:00", "14:00", "18:00"]}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Lucas Mendes",
+      "area": "Música",
+      "price": 70,
+      "rating": 4.7,
+      "photo": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
+      "bio": "Músico profissional e professor de violão há 12 anos. Especialista em música popular brasileira, rock e jazz. Formado pelo Berklee College of Music.",
+      "tags": ["Violão", "MPB", "Jazz", "Teoria Musical", "Composição"],
+      "city": "Recife, PE",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["15:00", "17:00", "19:00", "21:00"]},
+        {"day": "Terça", "slots": ["16:00", "18:00", "20:00"]},
+        {"day": "Quarta", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Quinta", "slots": ["15:00", "17:00", "19:00"]},
+        {"day": "Sexta", "slots": ["16:00", "18:00", "20:00", "21:00"]}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Patricia Rodrigues",
+      "area": "Culinária",
+      "price": 55,
+      "rating": 4.8,
+      "photo": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=150&h=150&fit=crop&crop=face",
+      "bio": "Chef de cozinha formada pelo Le Cordon Bleu. Especialista em culinária francesa, italiana e brasileira. Proprietária de 2 restaurantes premiados.",
+      "tags": ["Culinária Francesa", "Italiana", "Brasileira", "Confeitaria", "Técnicas"],
+      "city": "Florianópolis, SC",
+      "attendance": "presencial",
+      "availability": [
+        {"day": "Segunda", "slots": ["10:00", "14:00", "16:00"]},
+        {"day": "Terça", "slots": ["09:00", "15:00", "17:00", "19:00"]},
+        {"day": "Quarta", "slots": ["11:00", "13:00", "18:00"]},
+        {"day": "Quinta", "slots": ["10:00", "14:00", "16:00", "20:00"]},
+        {"day": "Sexta", "slots": ["09:00", "15:00", "17:00"]}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Diego Ferreira",
+      "area": "Fotografia",
+      "price": 80,
+      "rating": 4.6,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      "bio": "Fotógrafo profissional especializado em retratos e eventos. 10 anos de experiência, trabalha com grandes marcas e tem estúdio próprio.",
+      "tags": ["Retratos", "Eventos", "Lightroom", "Photoshop", "Iluminação"],
+      "city": "Curitiba, PR",
+      "attendance": "presencial",
+      "availability": [
+        {"day": "Segunda", "slots": ["13:00", "15:00", "17:00", "19:00"]},
+        {"day": "Terça", "slots": ["10:00", "14:00", "16:00", "20:00"]},
+        {"day": "Quarta", "slots": ["09:00", "12:00", "18:00"]},
+        {"day": "Quinta", "slots": ["11:00", "15:00", "17:00", "21:00"]},
+        {"day": "Sexta", "slots": ["10:00", "14:00", "16:00"]}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Camila Araújo",
+      "area": "Yoga",
+      "price": 65,
+      "rating": 4.9,
+      "photo": "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150&h=150&fit=crop&crop=face",
+      "bio": "Instrutora de yoga certificada com formação na Índia. Especialista em Hatha Yoga, Vinyasa e meditação. Mais de 8 anos ensinando bem-estar e qualidade de vida.",
+      "tags": ["Hatha Yoga", "Vinyasa", "Meditação", "Respiração", "Mindfulness"],
+      "city": "Fortaleza, CE",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["06:00", "12:00", "18:00", "20:00"]},
+        {"day": "Terça", "slots": ["07:00", "13:00", "19:00"]},
+        {"day": "Quarta", "slots": ["06:00", "11:00", "17:00", "20:00"]},
+        {"day": "Quinta", "slots": ["08:00", "14:00", "18:00"]},
+        {"day": "Sexta", "slots": ["07:00", "12:00", "19:00", "21:00"]}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Ricardo Pinto",
+      "area": "Matemática",
+      "price": 45,
+      "rating": 4.5,
+      "photo": "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=150&h=150&fit=crop&crop=face",
+      "bio": "Professor de matemática com mestrado pela USP. 15 anos de experiência no ensino médio e preparação para vestibular. Especialista em didática simples e eficaz.",
+      "tags": ["Álgebra", "Geometria", "Cálculo", "Vestibular", "ENEM"],
+      "city": "Campinas, SP",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Terça", "slots": ["15:00", "17:00", "19:00", "21:00"]},
+        {"day": "Quarta", "slots": ["14:00", "16:00", "20:00"]},
+        {"day": "Quinta", "slots": ["13:00", "17:00", "19:00", "21:00"]},
+        {"day": "Sexta", "slots": ["15:00", "17:00", "19:00"]}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Letícia Souza",
+      "area": "Redação",
+      "price": 50,
+      "rating": 4.8,
+      "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+      "bio": "Jornalista e escritora com especialização em redação criativa. Autora de 3 livros publicados e professora de escrita criativa há 7 anos.",
+      "tags": ["Redação", "ENEM", "Criativa", "Jornalismo", "Literatura"],
+      "city": "Goiânia, GO",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["09:00", "13:00", "15:00", "19:00"]},
+        {"day": "Terça", "slots": ["10:00", "14:00", "16:00", "20:00"]},
+        {"day": "Quarta", "slots": ["08:00", "12:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["09:00", "13:00", "18:00", "21:00"]},
+        {"day": "Sexta", "slots": ["10:00", "14:00", "16:00"]}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Alexandre Carvalho",
+      "area": "Física",
+      "price": 55,
+      "rating": 4.7,
+      "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face",
+      "bio": "Físico formado pelo ITA com doutorado em Física Teórica. Professor universitário e preparador para olimpíadas científicas. Paixão por ensinar conceitos complexos de forma simples.",
+      "tags": ["Mecânica", "Termodinâmica", "Eletromagnetismo", "Vestibular", "Olimpíadas"],
+      "city": "São José dos Campos, SP",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["15:00", "17:00", "19:00", "21:00"]},
+        {"day": "Terça", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Quarta", "slots": ["13:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["15:00", "17:00", "20:00", "21:00"]},
+        {"day": "Sexta", "slots": ["14:00", "16:00", "18:00"]}
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Beatriz Moura",
+      "area": "Espanhol",
+      "price": 40,
+      "rating": 4.6,
+      "photo": "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&h=150&fit=crop&crop=face",
+      "bio": "Professora de espanhol nativa da Argentina, radicada no Brasil há 10 anos. Certificada pelo Instituto Cervantes e especialista em preparação para DELE.",
+      "tags": ["DELE", "Conversação", "Gramática", "Cultura Hispânica", "Cervantes"],
+      "city": "São Paulo, SP",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["08:00", "12:00", "16:00", "18:00"]},
+        {"day": "Terça", "slots": ["09:00", "13:00", "17:00", "20:00"]},
+        {"day": "Quarta", "slots": ["10:00", "14:00", "18:00", "19:00"]},
+        {"day": "Quinta", "slots": ["08:00", "11:00", "15:00", "20:00"]},
+        {"day": "Sexta", "slots": ["09:00", "13:00", "17:00"]}
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Thiago Barbosa",
+      "area": "Química",
+      "price": 48,
+      "rating": 4.4,
+      "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop&crop=face",
+      "bio": "Químico industrial com mestrado pela UFRJ. 12 anos de experiência em indústria farmacêutica e 8 anos como professor particular. Especialista em química orgânica.",
+      "tags": ["Orgânica", "Inorgânica", "Físico-Química", "Vestibular", "Indústria"],
+      "city": "Rio de Janeiro, RJ",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["18:00", "19:00", "20:00", "21:00"]},
+        {"day": "Terça", "slots": ["17:00", "19:00", "20:00"]},
+        {"day": "Quarta", "slots": ["18:00", "19:00", "21:00"]},
+        {"day": "Quinta", "slots": ["17:00", "18:00", "20:00", "21:00"]},
+        {"day": "Sexta", "slots": ["19:00", "20:00", "21:00"]}
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Isabela Gomes",
+      "area": "Dança",
+      "price": 60,
+      "rating": 4.9,
+      "photo": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=150&h=150&fit=crop&crop=face",
+      "bio": "Bailarina profissional formada pela Escola de Dança do Teatro Municipal. Especialista em ballet clássico, jazz e dança contemporânea. 15 anos de palco e ensino.",
+      "tags": ["Ballet", "Jazz", "Contemporâneo", "Técnica", "Coreografia"],
+      "city": "Rio de Janeiro, RJ",
+      "attendance": "presencial",
+      "availability": [
+        {"day": "Segunda", "slots": ["17:00", "19:00", "20:00"]},
+        {"day": "Terça", "slots": ["16:00", "18:00", "19:00", "21:00"]},
+        {"day": "Quarta", "slots": ["17:00", "19:00", "20:00"]},
+        {"day": "Quinta", "slots": ["16:00", "18:00", "21:00"]},
+        {"day": "Sexta", "slots": ["17:00", "19:00", "20:00"]}
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Gabriel Ribeiro",
+      "area": "História",
+      "price": 42,
+      "rating": 4.5,
+      "photo": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+      "bio": "Professor de história com especialização em História do Brasil. Mestre pela UFMG e autor de artigos acadêmicos. Paixão por tornar a história interessante e relevante.",
+      "tags": ["Brasil", "Mundo", "Vestibular", "ENEM", "Contemporânea"],
+      "city": "Belo Horizonte, MG",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Terça", "slots": ["15:00", "17:00", "19:00", "21:00"]},
+        {"day": "Quarta", "slots": ["13:00", "16:00", "18:00"]},
+        {"day": "Quinta", "slots": ["14:00", "17:00", "20:00", "21:00"]},
+        {"day": "Sexta", "slots": ["15:00", "17:00", "19:00"]}
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Amanda Lima",
+      "area": "Biologia",
+      "price": 46,
+      "rating": 4.7,
+      "photo": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face",
+      "bio": "Bióloga com doutorado em Genética pela USP. Pesquisadora e professora há 10 anos. Especialista em biologia molecular e genética, com didática focada em compreensão profunda dos conceitos.",
+      "tags": ["Genética", "Molecular", "Citologia", "Vestibular", "Pesquisa"],
+      "city": "São Paulo, SP",
+      "attendance": "hibrido",
+      "availability": [
+        {"day": "Segunda", "slots": ["13:00", "15:00", "17:00", "19:00"]},
+        {"day": "Terça", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Quarta", "slots": ["12:00", "15:00", "17:00"]},
+        {"day": "Quinta", "slots": ["13:00", "16:00", "19:00", "21:00"]},
+        {"day": "Sexta", "slots": ["14:00", "16:00", "18:00"]}
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Eduardo Castro",
+      "area": "Geografia",
+      "price": 38,
+      "rating": 4.3,
+      "photo": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=150&h=150&fit=crop&crop=face",
+      "bio": "Geógrafo e professor com 14 anos de experiência. Especialista em geografia física e humana, com foco em questões ambientais e urbanas. Metodologia dinâmica com uso de mapas e tecnologia.",
+      "tags": ["Física", "Humana", "Ambiental", "Cartografia", "Vestibular"],
+      "city": "Brasília, DF",
+      "attendance": "online",
+      "availability": [
+        {"day": "Segunda", "slots": ["15:00", "17:00", "19:00", "21:00"]},
+        {"day": "Terça", "slots": ["14:00", "16:00", "18:00", "20:00"]},
+        {"day": "Quarta", "slots": ["13:00", "17:00", "19:00"]},
+        {"day": "Quinta", "slots": ["15:00", "18:00", "20:00", "21:00"]},
+        {"day": "Sexta", "slots": ["14:00", "16:00", "18:00"]}
+      ]
+    }
+  ]
+}

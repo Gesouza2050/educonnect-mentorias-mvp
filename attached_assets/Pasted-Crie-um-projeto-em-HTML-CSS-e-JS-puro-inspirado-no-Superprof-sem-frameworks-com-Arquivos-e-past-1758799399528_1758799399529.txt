@@ -1,0 +1,73 @@
+Crie um projeto em HTML, CSS e JS puro inspirado no Superprof (sem frameworks) com:
+
+Arquivos e pastas
+
+index.html, styles.css, app.js
+
+data/mentors.json (mock)
+
+assets/ (imagens/ícones)
+
+README.md
+
+Seções
+
+Navbar fixa (logo “EduConnect”, links Mentores, Agendar, Grupos) com menu hambúrguer no mobile.
+
+Busca e filtros: campo texto + filtros (área/tag, preço mínimo/máximo, atendimento online/presencial) e ordenar (rating, preço).
+
+Lista de mentores (cards dinâmicos) com: foto, nome, área, preço/h, rating ⭐, tags, botão “Ver perfil” (abre modal com bio e horários).
+
+Agendar: formulário com select de mentor (populado via JS), data, hora, mensagem; validação (campos obrigatórios, formatos) e mensagens de erro.
+
+Grupos de estudo: lista simples com 3–5 materiais (título + link) e tags.
+
+Rodapé simples.
+
+Funcionalidades JS
+
+Carregar dados de data/mentors.json (via fetch) e renderizar cards.
+
+Filtro + ordenação em tempo real (sem recarregar).
+
+Favoritar mentor (ícone ♥ no card) e persistir em localStorage; criar seção “Meus Favoritos”.
+
+Modal de Perfil: mostrar bio, tags, cidade, disponibilidade “slots”; botão “Agendar com este mentor” que pré-seleciona o mentor no formulário.
+
+Form de agendamento: onSubmit → valida, salva em localStorage (appointments) e exibe alert("Agendamento solicitado!").
+
+Estados de UI: skeleton de carregamento, “nenhum resultado”, e erro amigável se o JSON falhar.
+
+Paginação client-side (ex.: 6 por página) ou botão “Carregar mais”.
+
+Acessibilidade: landmarks semânticos, aria-*, labels vinculadas, focus states visíveis.
+
+Estilo (CSS)
+
+Grid responsivo: 3 colunas (desktop), 2 (tablet), 1 (mobile).
+
+Botão primário #2563eb com :hover/:focus.
+
+Cards com sombra suave e bordas arredondadas.
+
+Modal acessível (fechar com ESC, aria-modal, trap de foco).
+
+README.md
+
+Objetivo (Missão 1 – HTML/CSS/JS).
+
+Como rodar localmente (abrir index.html).
+
+Como publicar no GitHub Pages (Settings → Pages → branch main).
+
+Estrutura dos dados (mentors.json) e como editar.
+
+Regras
+
+Sem frameworks (nada de Bootstrap, Tailwind, React).
+
+Código comentado e organizado (funções: renderMentors, applyFilters, openModal, saveAppointment, etc.).
+
+Compatível com desktop e mobile.
+
+Entregue o projeto completo e funcional conforme descrito acima.

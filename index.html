@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect - Plataforma de Mentores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar fixa -->
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="#" aria-label="EduConnect - Página inicial">EduConnect</a></h1>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#mentors" aria-label="Ver mentores">Mentores</a></li>
+                    <li><a href="#booking" aria-label="Agendar sessão">Agendar</a></li>
+                    <li><a href="#groups" aria-label="Grupos de estudo">Grupos</a></li>
+                    <li><a href="#favorites" aria-label="Meus favoritos">Favoritos</a></li>
+                    <li id="nav-dashboard" style="display: none;"><a href="#dashboard" aria-label="Meu Dashboard">Dashboard</a></li>
+                    <li id="nav-sessions" style="display: none;"><a href="#sessions" aria-label="Minhas Sessões">Minhas Sessões</a></li>
+                    <li id="nav-login"><a href="#" onclick="openAuthModal()" aria-label="Entrar/Cadastrar">Entrar</a></li>
+                    <li id="nav-user" style="display: none;">
+                        <a href="#" onclick="toggleUserMenu()" aria-label="Menu do usuário">
+                            <span id="user-name">Usuário</span> ▼
+                        </a>
+                        <div id="user-menu" class="user-menu" style="display: none;">
+                            <a href="#dashboard">Dashboard</a>
+                            <a href="#sessions">Minhas Sessões</a>
+                            <a href="#" onclick="logout()">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+        <div class="hero-content">
+            <h2>Encontre o mentor perfeito para você</h2>
+            <p>Conecte-se com especialistas e acelere seu aprendizado</p>
+        </div>
+    </section>
+
+    <!-- Seção de busca e filtros -->
+    <section class="search-filters" aria-label="Buscar e filtrar mentores">
+        <div class="container">
+            <h2>Encontrar Mentores</h2>
+            
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Buscar por área, nome ou especialidade..."
+                    aria-label="Campo de busca"
+                >
+                <button id="search-btn" aria-label="Buscar">🔍</button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="area-filter">Área:</label>
+                    <select id="area-filter" aria-label="Filtrar por área">
+                        <option value="">Todas as áreas</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price-min">Preço mín (R$):</label>
+                    <input type="number" id="price-min" placeholder="0" min="0" aria-label="Preço mínimo">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price-max">Preço máx (R$):</label>
+                    <input type="number" id="price-max" placeholder="500" min="0" aria-label="Preço máximo">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="attendance-filter">Atendimento:</label>
+                    <select id="attendance-filter" aria-label="Tipo de atendimento">
+                        <option value="">Todos</option>
+                        <option value="online">Online</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="hibrido">Híbrido</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter">Ordenar por:</label>
+                    <select id="sort-filter" aria-label="Ordenar resultados">
+                        <option value="rating">Melhor avaliação</option>
+                        <option value="price-asc">Menor preço</option>
+                        <option value="price-desc">Maior preço</option>
+                        <option value="name">Nome A-Z</option>
+                    </select>
+                </div>
+                
+                <button id="clear-filters" class="btn-secondary">Limpar filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de mentores -->
+    <section id="mentors" class="mentors-section" aria-label="Lista de mentores">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Mentores</h2>
+                <div class="results-info">
+                    <span id="results-count">Carregando...</span>
+                </div>
+            </div>
+            
+            <!-- Loading skeleton -->
+            <div id="loading-skeleton" class="loading-skeleton" aria-hidden="true">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+            
+            <!-- Grid de mentores -->
+            <div id="mentors-grid" class="mentors-grid" role="grid" aria-label="Mentores disponíveis">
+                <!-- Cards serão inseridos via JavaScript -->
+            </div>
+            
+            <!-- Estado vazio -->
+            <div id="empty-state" class="empty-state" style="display: none;" role="status">
+                <h3>Nenhum mentor encontrado</h3>
+                <p>Tente ajustar os filtros ou buscar por outros termos.</p>
+            </div>
+            
+            <!-- Estado de erro -->
+            <div id="error-state" class="error-state" style="display: none;" role="alert">
+                <h3>Ops! Algo deu errado</h3>
+                <p>Não foi possível carregar os mentores. Tente novamente.</p>
+                <button id="retry-btn" class="btn-primary">Tentar novamente</button>
+            </div>
+            
+            <!-- Paginação -->
+            <div class="pagination">
+                <button id="load-more" class="btn-secondary" style="display: none;">Carregar mais</button>
+                <div class="pagination-info">
+                    <span id="pagination-text">Mostrando 6 de 20 mentores</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de favoritos -->
+    <section id="favorites" class="favorites-section" aria-label="Mentores favoritos">
+        <div class="container">
+            <h2>Meus Favoritos</h2>
+            <div id="favorites-grid" class="mentors-grid">
+                <div class="empty-favorites">
+                    <h3>Você ainda não tem favoritos</h3>
+                    <p>Clique no ♥ nos cards dos mentores para salvá-los aqui.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard do Usuário -->
+    <section id="dashboard" class="dashboard-section" style="display: none;" aria-label="Dashboard do usuário">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Meu Dashboard</h2>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img id="dashboard-user-avatar" src="" alt="Avatar do usuário">
+                    </div>
+                    <div class="user-details">
+                        <h3 id="dashboard-user-name">Nome do Usuário</h3>
+                        <p id="dashboard-user-role">Estudante</p>
+                        <p id="dashboard-user-email">email@exemplo.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h4>Sessões Agendadas</h4>
+                    <span class="stat-number" id="stat-sessions">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Grupos Participando</h4>
+                    <span class="stat-number" id="stat-groups">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Mentores Favoritos</h4>
+                    <span class="stat-number" id="stat-favorites">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Materiais Compartilhados</h4>
+                    <span class="stat-number" id="stat-materials">0</span>
+                </div>
+            </div>
+
+            <div class="dashboard-actions">
+                <button class="btn-primary" onclick="openBookingForm()">Agendar Nova Sessão</button>
+                <button class="btn-secondary" onclick="openCreateGroupModal()">Criar Grupo</button>
+                <button class="btn-secondary" onclick="scrollToSection('groups')">Explorar Grupos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minhas Sessões -->
+    <section id="sessions" class="sessions-section" style="display: none;" aria-label="Minhas sessões agendadas">
+        <div class="container">
+            <h2>Minhas Sessões</h2>
+            
+            <div class="sessions-filters">
+                <select id="session-status-filter" aria-label="Filtrar por status">
+                    <option value="">Todas as sessões</option>
+                    <option value="pending">Pendentes</option>
+                    <option value="confirmed">Confirmadas</option>
+                    <option value="completed">Concluídas</option>
+                    <option value="cancelled">Canceladas</option>
+                </select>
+                <input type="text" id="sessions-search" placeholder="Buscar por mentor ou área..." aria-label="Buscar sessões">
+            </div>
+
+            <div id="sessions-grid" class="sessions-grid">
+                <div class="empty-sessions">
+                    <h3>Você ainda não tem sessões agendadas</h3>
+                    <p>Agende sua primeira sessão com um mentor!</p>
+                    <button class="btn-primary" onclick="scrollToSection('booking')">Agendar Sessão</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de agendamento -->
+    <section id="booking" class="booking-section" aria-label="Agendar sessão">
+        <div class="container">
+            <h2>Agendar Sessão</h2>
+            
+            <form id="booking-form" class="booking-form" novalidate>
+                <div class="form-group">
+                    <label for="mentor-select">Mentor *:</label>
+                    <select id="mentor-select" required aria-describedby="mentor-error">
+                        <option value="">Selecione um mentor</option>
+                    </select>
+                    <div id="mentor-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="booking-date">Data *:</label>
+                        <input type="date" id="booking-date" required aria-describedby="date-error">
+                        <div id="date-error" class="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="booking-time">Hora *:</label>
+                        <input type="time" id="booking-time" required aria-describedby="time-error">
+                        <div id="time-error" class="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="booking-message">Mensagem adicional:</label>
+                    <textarea 
+                        id="booking-message" 
+                        placeholder="Descreva o que você gostaria de aprender ou suas expectativas para a sessão..."
+                        rows="4"
+                        maxlength="500"
+                        aria-describedby="message-counter"
+                    ></textarea>
+                    <div id="message-counter" class="character-counter">0/500 caracteres</div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Solicitar Agendamento</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Grupos de estudo -->
+    <section id="groups" class="groups-section" aria-label="Grupos de estudo">
+        <div class="container">
+            <h2>Grupos de Estudo</h2>
+            <p>Participe de grupos de estudo e colabore com outros estudantes</p>
+            
+            <div class="groups-header">
+                <div class="groups-filters">
+                    <input type="text" id="groups-search" placeholder="Buscar grupos..." aria-label="Buscar grupos">
+                    <select id="groups-tag-filter" aria-label="Filtrar por tag">
+                        <option value="">Todas as tags</option>
+                    </select>
+                    <select id="groups-participation-filter" aria-label="Filtrar por participação">
+                        <option value="">Todos os grupos</option>
+                        <option value="joined">Grupos que participo</option>
+                        <option value="available">Grupos disponíveis</option>
+                    </select>
+                </div>
+                <div class="groups-actions">
+                    <button id="create-group-btn" class="btn-primary" onclick="openCreateGroupModal()" style="display: none;">
+                        Criar Grupo
+                    </button>
+                </div>
+            </div>
+            
+            <div id="groups-grid" class="groups-grid">
+                <!-- Grupos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de perfil do mentor -->
+    <div id="mentor-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Perfil do Mentor</h3>
+                <button id="modal-close" class="modal-close" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button id="modal-book-btn" class="btn-primary">Agendar com este mentor</button>
+                <button id="modal-mentorship-btn" class="btn-secondary" style="display: none;">Participar de Mentoria</button>
+                <button class="btn-secondary" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Autenticação -->
+    <div id="auth-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="auth-modal-title">Entrar / Cadastrar</h3>
+                <button class="modal-close" onclick="closeAuthModal()" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showAuthTab('login')">Entrar</button>
+                    <button class="auth-tab" onclick="showAuthTab('register')">Cadastrar</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Senha:</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Entrar</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="register-name">Nome completo:</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Senha:</label>
+                        <input type="password" id="register-password" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-role">Eu sou:</label>
+                        <select id="register-role" required>
+                            <option value="">Selecione</option>
+                            <option value="student">Estudante</option>
+                            <option value="mentor">Mentor</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="mentor-fields" style="display: none;">
+                        <label for="register-area">Área de especialização:</label>
+                        <select id="register-area">
+                            <option value="">Selecione uma área</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para criar grupo -->
+    <div id="create-group-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="create-group-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="create-group-title">Criar Grupo de Estudo</h3>
+                <button class="modal-close" onclick="closeCreateGroupModal()" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="create-group-form">
+                    <div class="form-group">
+                        <label for="group-title">Título do Grupo *:</label>
+                        <input type="text" id="group-title" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="group-description">Descrição *:</label>
+                        <textarea id="group-description" required rows="3" maxlength="500"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="group-tags">Tags (separadas por vírgula):</label>
+                        <input type="text" id="group-tags" placeholder="JavaScript, Web Development, React">
+                    </div>
+                    <div class="form-group">
+                        <label for="group-materials">Material inicial (opcional):</label>
+                        <input type="text" id="group-material-title" placeholder="Título do material">
+                        <input type="url" id="group-material-url" placeholder="URL do material">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button onclick="createGroup()" class="btn-primary">Criar Grupo</button>
+                <button onclick="closeCreateGroupModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para compartilhar material -->
+    <div id="share-material-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="share-material-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="share-material-title">Compartilhar Material</h3>
+                <button class="modal-close" onclick="closeShareMaterialModal()" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="share-material-form">
+                    <div class="form-group">
+                        <label for="material-group">Grupo:</label>
+                        <select id="material-group" required>
+                            <option value="">Selecione um grupo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="material-title">Título do Material *:</label>
+                        <input type="text" id="material-title" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="material-url">URL do Material *:</label>
+                        <input type="url" id="material-url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="material-description">Descrição (opcional):</label>
+                        <textarea id="material-description" rows="2" maxlength="200"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button onclick="shareMaterial()" class="btn-primary">Compartilhar</button>
+                <button onclick="closeShareMaterialModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EduConnect</h4>
+                    <p>Conectando mentores e estudantes para um futuro melhor.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#mentors">Mentores</a></li>
+                        <li><a href="#booking">Agendar</a></li>
+                        <li><a href="#groups">Grupos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>educonnect@exemplo.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduConnect. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

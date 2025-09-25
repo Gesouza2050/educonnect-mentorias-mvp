@@ -1,0 +1,17 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "EduConnect é uma plataforma web que conecta mentores e estudantes, inspirada no Superprof. Desenvolvida com HTML, CSS e JavaScript puro, sem frameworks.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/memoizee": "^0.4.12",
+    "memoizee": "^0.4.17",
+    "openid-client": "^6.8.0"
+  }
+}
